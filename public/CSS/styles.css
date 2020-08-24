@@ -81,19 +81,6 @@ p {
   text-align: center;
   padding-top:2%;
 }
-.refresh-btn{
-  display:block;
-  margin:auto;
-  padding:8px 11px;
-  height:40px;
-  width:40px;
-  border:0;
-  border-radius:50%;
-  background-color:#e0e5ec;
-  box-shadow: 4px 4px 8px #a3b1c6, -0.25em -0.25em 0.5em #fff;
-  transform:translateY(-40px);
-}
-
 @media (max-width: 980px) {
   .wrapper {
     padding:10%;
