@@ -1,15 +1,16 @@
 .wrapper {
-  background-image:-webkit-linear-gradient(-60deg, #092532 50%, #89c9b8 50%);
-  padding: 2% 25%;
+  background-image:-webkit-linear-gradient(-60deg, #092532 49.5%, #89c9b8 50%);
+  padding: 2.9% 25%;
   font-family: "Fjalla One", sans-serif;
+  border:5px solid #fff;
 }
-h4{
+.wrapper h4{
   text-align: center;
   color:#c7e2b2;
   font-family: "Anton", sans-serif;
   padding-bottom: 3%;
 }
-h2 {
+.wrapper h2 {
   text-align: center;
   color:#c7e2b2;
   font-family: "Anton", sans-serif;
@@ -20,13 +21,29 @@ h2 {
   border-radius:10px;
   padding-top:4%;
 }
+.grid-section {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding-top: 2%;
+}
+.grid {
+  background:url("../Assets/grid.png");
+  background-size:cover;
+  padding: 20px;
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: inset 4px 4px 8px #a3b1c6, inset -0.25em -0.25em 0.5em #fff;
+  margin-bottom: 50px;
+}
 .form-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2% 0 8%;
 }
-input[type="color"] {
+.form-section input[type="color"] {
   height: 50px;
   width: 50px;
   border: 0;
@@ -34,7 +51,7 @@ input[type="color"] {
   background-color: #e0e5ec;
   box-shadow: inset 2px 2px 8px #a3b1c6, inset -0.125em -0.125em 0.5em #fff;
 }
-input[type="number"] {
+.form-section input[type="number"] {
   width: 200px;
   padding-left: 10px;
   border: 0;
@@ -61,29 +78,18 @@ input[type="number"] {
   padding-top: 10px;
   border-radius: 5px;
 }
-.grid-section {
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  padding-top: 2%;
-}
-.grid {
-  background-color: #fff;
-  padding: 20px;
-  height: 250px;
-  width: 250px;
-  border-radius: 20px;
-  background-color: #e0e5ec;
-  box-shadow: inset 4px 4px 8px #a3b1c6, inset -0.25em -0.25em 0.5em #fff;
-  margin-bottom: 50px;
-}
-p {
+.wrapper p {
+  font-size:1.1rem;
   text-align: center;
   padding-top:2%;
+  font-family: 'Caveat', cursive;
 }
+
+/* Media Queries */
 @media (max-width: 980px) {
   .wrapper {
     padding:10%;
+    border:0;
   }
   .form-section {
     text-align: center;
@@ -91,11 +97,11 @@ p {
   .color-pallete {
     margin: auto;
   }
-  input[type="number"] {
+  .form-section input[type="number"] {
     text-align: center;
     padding-left: 0;
   }
-  .button-div {
+  .submit-btn-div {
     display: flex;
     justify-content: center;
     align-items: center;

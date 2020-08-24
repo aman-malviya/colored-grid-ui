@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 //App
 const app = express();
 
+//Global variable declaration
 let colors = [];
-let randomArr = [];
 let gridSize = "3";
 
 //View Engine
@@ -17,14 +17,18 @@ app.use(express.static(__dirname + "/public"));
 
 //Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
-//Get requests
+
+//Get request
 app.get("/", function (req, res) {
   colors.length=0;
+  gridSize="3";
   res.render("home", {
     grid: gridSize,
     colors: colors,
   });
 });
+
+//Post Request
 app.post("/", function (req, res) {
   colors.length = 0;
   gridSize = req.body.gridSize;
