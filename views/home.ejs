@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid UI</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&display=swap" rel="stylesheet">
+     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <style>
+      .grid {
+        display: grid;
+        grid-template-rows: repeat(<%= grid %>, 1fr);
+        grid-template-columns: repeat(<%= grid %>, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="wrapper">
+      <h4>Have a look at some amazing Color Combinations!</h4>
+      <h2>Select some colors to color your grid!</h2>
+      <hr>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="grid-section">
+            <div class="grid">
+              <% for(i=0;i<grid*grid;i++){ %>
+              <% let random=Math.floor(Math.random()*3) %>
+              <div class="grid-element" style="background-color: <%= colors[random] %>;"></div>
+              <% } %>
+            </div>
+          </div>
+          <a href="/" class="refresh-btn"><i class="fas fa-redo"></i></a>
+        </div>
+      <div class="col-lg-6 form-section">
+        <form action="/" method="POST">
+          <label for="">Number of Rows and Columns in the Grid</label>
+          <br>
+          <input value="<%= grid %>" name="gridSize" type="number" min="1" />
+          <br>
+          <br>
+          <label for="">Color Pallete</label>
+          <br>
+          <div class="color-pallete">
+            <input name="color1" type="color" value="<%= colors[0] %>" />
+            <input name="color2" type="color" value="<%= colors[1] %>" />
+            <input name="color3" type="color" value="<%= colors[2] %>" />
+          </div>
+          <br>
+          <div class="button-div">
+            <button class="submit-btn" type="submit">Color It</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <p>Keep on refreshing and find a lot of patterns.</p>
+    </section>
+  </body>
+</html>
